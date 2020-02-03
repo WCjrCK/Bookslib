@@ -1,0 +1,74 @@
+
+<html>
+        <head>
+        <script> 
+          function PreviewImage(imgFile) {
+            var path;
+            if (document.all) {//IE 
+                imgFile.select();
+                path = document.selection.createRange().text;
+                document.getElementById("imgPreview").innerHTML = "";
+                document.getElementById("imgPreview").style.filter = "progid:DXImageTransform.Microsoft.AlphaImageLoader(enabled='true',sizingMethod='scale',src=\"" + path + "\")";//使用滤镜效果 
+            } else {//FF 
+                path = URL.createObjectURL(imgFile.files[0]);
+                document.getElementById("imgPreview").innerHTML = "<img src='"+path+"' height=\"200px\" width=\"200px\" />";
+            }
+          }
+        </script>
+        </head>
+        <body>
+            <a href='library.php'><button>返回主界面</button></a>
+            <form action="cbbases.php" method="post" enctype="multipart/form-data">
+                <div style="border:1px solid;">
+                    <table>
+                        <tr>
+                            <td rowspan="5">
+                                <div style="padding:20px">
+                                    <div>选择封面图</div>
+                                    <input type="file" name='file' accept="image/*" onchange='PreviewImage(this)'/>
+                                    <input style="display:none" type="text" name="new_name" value="cover12124" />
+                                    <div id="imgPreview" style='width: 200px; height: 200px;'>
+                                        <img src="" height="200px" width="200px" />
+                                    </div>
+                                </div>
+                            </td>
+                            <td style="height:40px;padding:10px"><div><b>书名：</b></div><input></td>
+                        </tr>
+                        <tr><td style="height:40px;padding:10px"><div>作者：</div><input></td></tr>
+                        <tr><td style="height:40px;padding:10px"><div>出版社：</div><input><div>出版日期：</div><input></td></tr>
+                        <tr><td style="height:40px;padding:10px"><div>ISBN码：</div><input><div>价格：</div><input><div>索书号：</div><input></td></tr>
+                        <tr><td style="height:40px;padding:10px"><div>来源：</div><input></td></tr>
+                        <tr><td></td><td>简介：<input class="summary"></td></tr>
+                    </table>
+                    <div style="padding:20px">相关专业：<input></div>
+                    <div style="padding:20px">标签：<input></div>
+                    <button style="margin:20px"><font color=red>修改</font></button>
+                </div>
+            </form>
+        </body>
+        </html>
+
+        
+<br><br><br>
+<div style="border:1px solid;">
+    <table>
+        <tr>
+            <td rowspan="5">
+                <div style="height:200px;width:200px;padding:20px">
+                    <img src="./picture/default.png"/>
+                </div>
+                <div align=center>在馆()/借出()</div>
+            </td>
+            <td style="height:40px;padding:10px"><div><b>书名：</b></div></td>
+        </tr>
+        <tr><td style="height:40px;padding:10px"><div>作者：</div></td></tr>
+        <tr><td style="height:40px;padding:10px"><div>出版社：出版日期：</div></td></tr>
+        <tr><td style="height:40px;padding:10px"><div>ISBN码：价格：索书号：</div></td></tr>
+        <tr><td style="height:40px;padding:10px"><div>来源：</div></td></tr>
+        <tr><td></td><td>简介：<div class="summary">uiefigiweiwuehfwefwerweweewwwwwwwwwwwww</div></td></tr>
+    </table>
+    <div style="padding:20px">相关专业：</div>
+    <div style="padding:20px">标签：</div>
+    <div style="padding:20px">借出记录：</div>
+    <div style="padding:20px"><button>借书</button></div>
+</div>

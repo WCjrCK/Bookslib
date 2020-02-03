@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html>
+<head>
+        <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        
+        <title>注册</title>
+        <script charset="utf-8" src="./js/jquery.min.js"></script>
+</head>
+<body>
+    <div align="center">
+        <span style="padding: 10px;font-size: 30px;">注册</span>
+        <form style="padding: 20px;" action="SIGNUP.php" method="post">
+                <div style="width: 70%;height: 40px;">
+                    姓&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;名&nbsp;：<input style="width: 70%;height: 30px;" type="text" name="name" required>
+                </div>
+                <div style="width: 70%;height: 40px;">
+                    身份证号：<input style="width: 70%;height: 30px;" type="text" name="idcardnum" required>
+                </div>
+                <div style="width: 70%;height: 40px;">
+                    学&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;号&nbsp;：<input style="width: 70%;height: 30px;" type="text" name="studentnum" required>
+                </div>
+                <div style="width: 70%;height: 40px;">
+                    用&nbsp;户&nbsp;名&nbsp;：<input style="width: 70%;height: 30px;" type="text" name="username" maxlength="30" required>
+                </div>
+                <div style="width: 70%;height: 40px;">
+                    密&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;码&nbsp;：<input id="inpa" style="width: 70%;height: 30px;" type="password" name="password" required>
+                </div>
+                <div style="width: 70%;height: 40px;">
+                    重复密码：<input id="inre" style="width: 70%;height: 30px;" type="password" name="repassword" required>
+                </div>
+            <button id="button1" style="font-size: 20px;height: 40px; width: 100px; margin: 10px;">注册</button>
+        </form>
+    </div>
+</body>
+<script>
+    $('#button1').click(function(){
+        if($('#inpa').val() != $('#inre').val()){
+            alert("两次输入的密码不一致！");
+            $('#inpa').val("");
+            $('#inre').val("");
+            return false;
+        }
+    })
+</script>
+</html>
